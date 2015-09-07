@@ -3,21 +3,28 @@ body {
   background-color: whitesmoke;
   color: #333; }
 
-#wrapper {
-  width: 500px; }
+.wrapper .widget {
+  width: 50%;
+  margin: auto; }
+  .wrapper .widget div {
+    display: inline-block;
+    vertical-align: middle; }
+  .wrapper .widget .nav-btn {
+    width: 8%; }
+  .wrapper .widget .container {
+    width: 80%; }
 
 .card {
   background-color: white;
-  padding: 10px;
-  display: inline-block;
-  width: 100%; }
-  .card .column {
-    float: left;
-    margin-left: 10px; }
-  .card .summery {
-    max-width: 400px;
-    margin-left: 10px; }
-    .card .summery div {
+  padding: 2%; }
+  .card .col {
+    display: inline-block; }
+  .card .narrow {
+    width: 20%; }
+  .card .wide {
+    width: 77%;
+    margin-left: 1%; }
+    .card .wide div {
       margin: 2px 0; }
   .card .img-rating {
     width: 100px; }

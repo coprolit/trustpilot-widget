@@ -6,14 +6,24 @@
     <link rel="stylesheet" href="css/core.css">
 </head>
 <body>
-    <div id="wrapper"></div>
+    <div class="wrapper">
+        <div class="widget">
+            <div class="nav-btn">
+                <a href="#"><img src="img/arrow-up.png"></a>
+            </div>
+            <div class="container"></div>
+            <div class="nav-btn">
+                <a href="#"><img src="img/arrow-down.png"></a>
+            </div>
+        </div>
+    </div>
 
     <!-- Templates: -->
     <script id="review-card-template" type="text/template">
-        <div class="column">
+        <div class="col narrow">
             <img alt="" class="img-circle" height="auto" src="img/<%= profileImg %>">
         </div>
-        <div class="column summery">
+        <div class="col wide">
             <div><img alt="" class="img-rating" height="auto" src="img/<%= ratingImg %>" ></div>
             <div><em>"<%= reviewTitle %>"</em></div>
             <div><small><%= fullName %>, <%= location %></small></div>

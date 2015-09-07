@@ -60,11 +60,15 @@ function loadJSON(url, callback) {
 function startWidget(data){
     var cardsCollection = new CardCollection(data);
 
+    var cardView = new CardItemView({model: cardsCollection.at(0)});
+    $('.container').append(cardView.render().$el);
+    /*
     _.each(cardsCollection.models, function(element, index){
         console.log(element);
         var cardView = new CardItemView({model: element});
         $('#wrapper').append(cardView.render().$el);
     });
+    */
 }
 
 // Load data and init widget:
