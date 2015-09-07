@@ -1,0 +1,27 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: whitesmoke;
+  color: #333; }
+
+#wrapper {
+  width: 500px; }
+
+.card {
+  background-color: white;
+  padding: 10px;
+  display: inline-block;
+  width: 100%; }
+  .card .column {
+    float: left;
+    margin-left: 10px; }
+  .card .summery {
+    max-width: 400px;
+    margin-left: 10px; }
+    .card .summery div {
+      margin: 2px 0; }
+  .card .img-rating {
+    width: 100px; }
+  .card .img-circle {
+    border-radius: 500px; }
+
+/*# sourceMappingURL=core.css.map */

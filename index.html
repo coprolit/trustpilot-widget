@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trustpilot widget</title>
+    <link rel="stylesheet" href="css/core.css">
+</head>
+<body>
+    <div id="wrapper"></div>
+
+    <!-- Templates: -->
+    <script id="review-card-template" type="text/template">
+        <div class="column">
+            <img alt="" class="img-circle" height="auto" src="img/<%= profileImg %>">
+        </div>
+        <div class="column summery">
+            <div><img alt="" class="img-rating" height="auto" src="img/<%= ratingImg %>" ></div>
+            <div><em>"<%= reviewTitle %>"</em></div>
+            <div><small><%= fullName %>, <%= location %></small></div>
+        </div>
+    </script>
+    <!-- Templates END -->
+
+    <!-- 3rd-Party Libraries (Order matters) -->
+    <script type="text/javascript" src="libs/underscore-min.js"></script>
+    <script type="text/javascript" src="libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="libs/backbone-min.js"></script>
+
+    <!-- Widget: -->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
