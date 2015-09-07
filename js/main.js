@@ -11,12 +11,12 @@ var CardModel = Backbone.Model.extend({
     }
 });
 
-// Collection class for the Cards list endpoint
+// Collection class for the card item list
 var CardCollection = Backbone.Collection.extend({
     model: CardModel
 });
 
-// View class for displaying each card list item
+// View class for displaying each card item
 var CardItemView = Backbone.View.extend({
     className: 'card',
     template: _.template($('#review-card-template').html()),
@@ -44,6 +44,8 @@ var CardItemView = Backbone.View.extend({
     }
 });
 
+var count = 0;
+var cardsCollection;
 
 function loadJSON(url, callback) {
     var xobj = new XMLHttpRequest();
@@ -58,22 +60,28 @@ function loadJSON(url, callback) {
 }
 
 function startWidget(data){
-    var cardsCollection = new CardCollection(data);
+    cardsCollection = new CardCollection(data);
 
-    var cardView = new CardItemView({model: cardsCollection.at(0)});
-    $('.container').append(cardView.render().$el);
-    /*
-    _.each(cardsCollection.models, function(element, index){
-        console.log(element);
-        var cardView = new CardItemView({model: element});
-        $('#wrapper').append(cardView.render().$el);
-    });
-    */
+    showCard(cardsCollection.at(0));
+
+    //showCard(cardsCollection.at(count));
+    //var timer = setInterval(nextCard, 2000);
 }
 
-// Load data and init widget:
+function nextCard(){
+    count = count < cardsCollection.length-1 ? count + 1 : 0; // increment count
+    showCard(cardsCollection.at(count));
+}
+
+function showCard(model){
+    var cardView = new CardItemView({model: model});
+    var cont = $('.container');
+    cont.empty();
+    cont.append(cardView.render().$el);
+}
+
+// Load data and start widget:
 loadJSON('reviews.json', function(response) {
     var jsonData = JSON.parse(response);
-    //console.log(jsonData[0].fullName);
     startWidget(jsonData);
 });

@@ -20,13 +20,19 @@
 
     <!-- Templates: -->
     <script id="review-card-template" type="text/template">
-        <div class="col narrow">
+        <div class="col-1">
             <img alt="" class="img-circle" height="auto" src="img/<%= profileImg %>">
         </div>
-        <div class="col wide">
-            <div><img alt="" class="img-rating" height="auto" src="img/<%= ratingImg %>" ></div>
-            <div><em>"<%= reviewTitle %>"</em></div>
-            <div><small><%= fullName %>, <%= location %></small></div>
+        <div class="col-2">
+            <div>
+                <img alt="" class="img-rating" height="auto" src="img/<%= ratingImg %>" >
+            </div>
+            <div class="review-title">
+                "<%= reviewTitle %>" <span class="profile-name">- <%= fullName %><%= (location.length ? ", " + location : "") %></span>
+            </div>
+            <div class="review-body">
+                "<%= reviewBody %>"
+            </div>
         </div>
     </script>
     <!-- Templates END -->

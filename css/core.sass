@@ -1,15 +1,22 @@
+$padding: 12px
+
 body
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
   background-color: whitesmoke
-  color: #333
+
+*
+  box-sizing: border-box
 
 .wrapper
+  color: #333
+  font-size: small
+  line-height: 1.5em
 
   .widget
     width: 50%
     margin: auto
 
-    div
+    >div
       display: inline-block
       vertical-align: middle
 
@@ -20,20 +27,60 @@ body
 
 .card
   background-color: white
-  padding: 2%
+  padding: $padding
 
-  .col
-    display: inline-block
+  .col-1
+    width: 75px
+    float: left
 
-  .narrow
-    width: 20%
-
-  .wide
-    width: 77%
-    margin-left: 1%
+  .col-2
+    max-width: 80%
+    float: left
+    margin-left: $padding
 
     div
-      margin: 2px 0
+      margin: 5px 0
+
+  .footer
+    clear: both
+    padding-top: $padding
+
+  &:after // clearfix hack
+    content: ""
+    clear: both
+    display: block
+
+  .review-title
+    font-style: italic
+    color: dimgray
+    font-weight: bold
+
+  .review-body
+    font-style: italic
+    overflow: hidden
+    max-height: 4.4em /* display ellipsis after 3 lines */
+    position: relative
+
+    &:before /* multiline ellipsis trick - not perfect, but passable. */
+      background: #fff
+      bottom: 0
+      position: absolute
+      right: 0
+      content: '\2026'
+
+    &:after
+      content: ''
+      background: #fff
+      position: absolute
+      height: 50px
+      width: 100%
+      z-index: 1
+
+  .profile-name
+    color: grey
+    font-weight: normal
+    font-style: normal
+    //font-size: small
 
   .img-rating
     width: 100px

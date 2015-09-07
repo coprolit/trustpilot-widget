@@ -1,31 +1,71 @@
+@charset "UTF-8";
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: whitesmoke;
-  color: #333; }
+  background-color: whitesmoke; }
 
-.wrapper .widget {
-  width: 50%;
-  margin: auto; }
-  .wrapper .widget div {
-    display: inline-block;
-    vertical-align: middle; }
-  .wrapper .widget .nav-btn {
-    width: 8%; }
-  .wrapper .widget .container {
-    width: 80%; }
+* {
+  box-sizing: border-box; }
+
+.wrapper {
+  color: #333;
+  font-size: small;
+  line-height: 1.5em; }
+  .wrapper .widget {
+    width: 50%;
+    margin: auto; }
+    .wrapper .widget > div {
+      display: inline-block;
+      vertical-align: middle; }
+    .wrapper .widget .nav-btn {
+      width: 8%; }
+    .wrapper .widget .container {
+      width: 80%; }
 
 .card {
   background-color: white;
-  padding: 2%; }
-  .card .col {
-    display: inline-block; }
-  .card .narrow {
-    width: 20%; }
-  .card .wide {
-    width: 77%;
-    margin-left: 1%; }
-    .card .wide div {
-      margin: 2px 0; }
+  padding: 12px; }
+  .card .col-1 {
+    width: 75px;
+    float: left; }
+  .card .col-2 {
+    max-width: 80%;
+    float: left;
+    margin-left: 12px; }
+    .card .col-2 div {
+      margin: 5px 0; }
+  .card .footer {
+    clear: both;
+    padding-top: 12px; }
+  .card:after {
+    content: "";
+    clear: both;
+    display: block; }
+  .card .review-title {
+    font-style: italic;
+    color: dimgray;
+    font-weight: bold; }
+  .card .review-body {
+    font-style: italic;
+    overflow: hidden;
+    max-height: 4.4em;
+    position: relative; }
+    .card .review-body:before {
+      background: #fff;
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      content: "…"; }
+    .card .review-body:after {
+      content: "";
+      background: #fff;
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      z-index: 1; }
+  .card .profile-name {
+    color: grey;
+    font-weight: normal;
+    font-style: normal; }
   .card .img-rating {
     width: 100px; }
   .card .img-circle {
