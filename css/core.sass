@@ -1,6 +1,5 @@
 $padding: 12px
 
-
 body
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
   background-color: whitesmoke
@@ -8,94 +7,110 @@ body
 *
   box-sizing: border-box
 
-.wrapper
-  color: #333
+.small
+  color: grey
+  font-weight: normal
+  font-style: normal
   font-size: small
-  line-height: 1.5em
 
-  .widget
-    width: 50%
-    margin: auto
+a
+  color: inherit
+  text-decoration: none
 
-    >div
-      display: inline-block
-      vertical-align: middle
-
-    .nav-btn
-      width: 8%
-    .container
-      width: 80%
-
-.card
+.panel
   background-color: white
-  padding: $padding
+  margin-top: 1px
 
-  .col-1
-    width: 75px
-    float: left
-
-  .col-2
-    max-width: 80%
-    float: left
-    margin-left: $padding
-
-    div
-      margin: 5px 0
-
-  .footer
-    clear: both
-    padding-top: $padding
-
-  &:after // clearfix hack
-    content: ""
-    clear: both
-    display: block
-
-  .review-title
-    font-style: italic
-    color: dimgray
-    font-weight: bold
-
-  .review-body
-    font-style: italic
-    overflow: hidden
-    max-height: 4.4em /* display ellipsis after 3 lines */
-    position: relative
-
-    &:before /* multiline ellipsis trick - not perfect, but passable. */
-      background: #fff
-      bottom: 0
-      position: absolute
-      right: 0
-      content: '\2026'
-
-    &:after
-      content: ''
-      background: #fff
-      position: absolute
-      height: 50px
-      width: 100%
-      z-index: 1
-
-  .profile-name
-    color: grey
-    font-weight: normal
-    font-style: normal
-    //font-size: small
-
-  .img-rating
-    width: 100px
-
-  .img-circle
-    border-radius: 500px
+.widget-wrapper
+  color: #333
+  line-height: 1.3em
+  max-width: 500px
+  margin: auto
 
 .summery
-  background-color: white
+  @extend .panel
+  text-align: center
+  padding: $padding
 
   .tp-widget-logo img
-    width: 158px
+    vertical-align: text-top
 
   .star-rating
+    display: inline-block
+    margin-top: 5px
+
     .star
       float: left
+      border-radius: 2px
+      margin-right: 2px
+      padding: 3px 4px 1px
       background-color: #c8c8c8
+      transition: background-color .3s
+
+  .footer
+    margin-top: 10px
+
+.review
+  @extend .panel
+
+  .card
+    padding: $padding
+
+    .col-1
+      width: 75px
+      float: left
+
+    .col-2
+      max-width: 80%
+      float: left
+      margin-left: $padding
+
+      div
+        margin: 5px 0
+
+    &:after // clearfix hack
+      content: ""
+      clear: both
+      display: block
+
+    .review-title
+      font-style: italic
+      color: dimgray
+      font-weight: bold
+
+    .review-body
+      font-style: italic
+      font-size: 80%
+      line-height: 1.3em
+      overflow: hidden
+      max-height: 3.5em /* display ellipsis after 3 lines */
+      position: relative
+
+      &:before /* multiline ellipsis trick - not perfect, but passable. */
+        background: #fff
+        bottom: 0
+        position: absolute
+        right: 0
+        content: '\2026'
+
+      &:after
+        content: ''
+        background: #fff
+        position: absolute
+        height: 50px
+        width: 100%
+        z-index: 1
+
+
+    .link
+      float: right
+
+    .img-rating
+      width: 100px
+
+    .img-circle
+      border-radius: 500px
+
+.nav
+  @extend .panel
+  text-align: center

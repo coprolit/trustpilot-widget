@@ -6,77 +6,91 @@ body {
 * {
   box-sizing: border-box; }
 
-.wrapper {
-  color: #333;
-  font-size: small;
-  line-height: 1.5em; }
-  .wrapper .widget {
-    width: 50%;
-    margin: auto; }
-    .wrapper .widget > div {
-      display: inline-block;
-      vertical-align: middle; }
-    .wrapper .widget .nav-btn {
-      width: 8%; }
-    .wrapper .widget .container {
-      width: 80%; }
+.small {
+  color: grey;
+  font-weight: normal;
+  font-style: normal;
+  font-size: small; }
 
-.card {
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.panel, .summery, .review, .nav {
   background-color: white;
+  margin-top: 1px; }
+
+.widget-wrapper {
+  color: #333;
+  line-height: 1.3em;
+  max-width: 500px;
+  margin: auto; }
+
+.summery {
+  text-align: center;
   padding: 12px; }
-  .card .col-1 {
+  .summery .tp-widget-logo img {
+    vertical-align: text-top; }
+  .summery .star-rating {
+    display: inline-block;
+    margin-top: 5px; }
+    .summery .star-rating .star {
+      float: left;
+      border-radius: 2px;
+      margin-right: 2px;
+      padding: 3px 4px 1px;
+      background-color: #c8c8c8;
+      transition: background-color 0.3s; }
+  .summery .footer {
+    margin-top: 10px; }
+
+.review .card {
+  padding: 12px; }
+  .review .card .col-1 {
     width: 75px;
     float: left; }
-  .card .col-2 {
+  .review .card .col-2 {
     max-width: 80%;
     float: left;
     margin-left: 12px; }
-    .card .col-2 div {
+    .review .card .col-2 div {
       margin: 5px 0; }
-  .card .footer {
-    clear: both;
-    padding-top: 12px; }
-  .card:after {
+  .review .card:after {
     content: "";
     clear: both;
     display: block; }
-  .card .review-title {
+  .review .card .review-title {
     font-style: italic;
     color: dimgray;
     font-weight: bold; }
-  .card .review-body {
+  .review .card .review-body {
     font-style: italic;
+    font-size: 80%;
+    line-height: 1.3em;
     overflow: hidden;
-    max-height: 4.4em;
+    max-height: 3.5em;
     position: relative; }
-    .card .review-body:before {
+    .review .card .review-body:before {
       background: #fff;
       bottom: 0;
       position: absolute;
       right: 0;
       content: "…"; }
-    .card .review-body:after {
+    .review .card .review-body:after {
       content: "";
       background: #fff;
       position: absolute;
       height: 50px;
       width: 100%;
       z-index: 1; }
-  .card .profile-name {
-    color: grey;
-    font-weight: normal;
-    font-style: normal; }
-  .card .img-rating {
+  .review .card .link {
+    float: right; }
+  .review .card .img-rating {
     width: 100px; }
-  .card .img-circle {
+  .review .card .img-circle {
     border-radius: 500px; }
 
-.summery {
-  background-color: white; }
-  .summery .tp-widget-logo img {
-    width: 158px; }
-  .summery .star-rating .star {
-    float: left;
-    background-color: #c8c8c8; }
+.nav {
+  text-align: center; }
 
 /*# sourceMappingURL=core.css.map */
