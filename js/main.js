@@ -37,10 +37,25 @@ var CardItemView = Backbone.View.extend({
 
     events: {
         //'click .remove': 'onRemove'
+    }
+});
+
+// View class for displaying Trustscore
+var SummeryView = Backbone.View.extend({
+    className: 'summery',
+    template: _.template($('#summery-template').html()),
+
+    initialize: function() {
+
     },
 
-    onRemove: function() {
-        this.model.destroy();
+    render: function() {
+        this.$el.html(this.template(this.model.attributes));
+        return this;
+    },
+
+    events: {
+        //'click .remove': 'onRemove'
     }
 });
 
@@ -62,6 +77,14 @@ function loadJSON(url, callback) {
 function startWidget(data){
     cardsCollection = new CardCollection(data);
 
+    var summeryView = new SummeryView({
+        model: new Backbone.Model(),
+        collection: cardsCollection
+    });
+    var cont = $('.summery');
+    cont.empty();
+    cont.append(summeryView.render().$el);
+
     showCard(cardsCollection.at(0));
 
     //showCard(cardsCollection.at(count));
@@ -75,7 +98,7 @@ function nextCard(){
 
 function showCard(model){
     var cardView = new CardItemView({model: model});
-    var cont = $('.container');
+    var cont = $('.review');
     cont.empty();
     cont.append(cardView.render().$el);
 }

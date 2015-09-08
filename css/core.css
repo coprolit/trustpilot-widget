@@ -71,4 +71,12 @@ body {
   .card .img-circle {
     border-radius: 500px; }
 
+.summery {
+  background-color: white; }
+  .summery .tp-widget-logo img {
+    width: 158px; }
+  .summery .star-rating .star {
+    float: left;
+    background-color: #c8c8c8; }
+
 /*# sourceMappingURL=core.css.map */

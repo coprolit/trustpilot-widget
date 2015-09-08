@@ -8,10 +8,11 @@
 <body>
     <div class="wrapper">
         <div class="widget">
+            <div class="summery"></div>
             <div class="nav-btn">
                 <a href="#"><img src="img/arrow-up.png"></a>
             </div>
-            <div class="container"></div>
+            <div class="review"></div>
             <div class="nav-btn">
                 <a href="#"><img src="img/arrow-down.png"></a>
             </div>
@@ -34,6 +35,29 @@
                 "<%= reviewBody %>"
             </div>
         </div>
+    </script>
+
+    <script id="summery-template" type="text/template">
+        5 stars on <span class="tp-widget-logo">
+            <img alt="Trustpilot" title="Trustpilot" data-ng-src="//images-static.trustpilot.com/api/logos/light-bg/255x29.png" src="//images-static.trustpilot.com/api/logos/light-bg/255x29.png">
+        </span>
+
+        <div class="tp-widget-stars clearfix">
+            <div class="star-rating">
+                <div class="star"><img src="//images-static.trustpilot.com/community/shared/sprite_star.png" width="22" height="22"></div>
+                <div class="star"><img src="//images-static.trustpilot.com/community/shared/sprite_star.png" width="22" height="22"></div>
+                <div class="star"><img src="//images-static.trustpilot.com/community/shared/sprite_star.png" width="22" height="22"></div>
+                <div class="star"><img src="//images-static.trustpilot.com/community/shared/sprite_star.png" width="22" height="22"></div>
+                <div class="star"><img src="//images-static.trustpilot.com/community/shared/sprite_star.png" width="22" height="22"></div>
+            </div>
+        </div>
+        <div>
+            Rated 4.6 out of 10 based on 5,025 reviews.
+        </div>
+        <div>
+            See some of the reviews here.
+        </div>
+
     </script>
     <!-- Templates END -->
 
