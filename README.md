@@ -1,3 +1,2 @@
-# trustpilot-widget
-Trustpilot widget challenge
-Carousel widget for Trustpilot developer challenge.
+# Trustpilot widget challenge
+A carousel widget created for Trustpilot developer challenge.
