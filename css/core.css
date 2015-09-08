@@ -18,7 +18,8 @@ a {
 
 .panel, .summery, .review, .nav {
   background-color: white;
-  margin-top: 1px; }
+  margin-top: 1px;
+  padding: 12px; }
 
 .star-red {
   background-color: #e22027 !important; }
@@ -42,8 +43,7 @@ a {
   margin: auto; }
 
 .summery {
-  text-align: center;
-  padding: 12px; }
+  text-align: center; }
   .summery .tp-widget-logo img {
     vertical-align: text-top; }
   .summery .star-rating {
@@ -59,53 +59,52 @@ a {
   .summery .footer {
     margin-top: 10px; }
 
-.review .card {
-  padding: 12px; }
-  .review .card .col-1 {
-    width: 75px;
-    float: left; }
-  .review .card .col-2 {
-    max-width: 80%;
-    float: left;
-    margin-left: 12px; }
-    .review .card .col-2 div {
-      margin: 5px 0; }
-  .review .card:after {
+.review .card .col-1 {
+  width: 75px;
+  float: left; }
+.review .card .col-2 {
+  max-width: 80%;
+  float: left;
+  margin-left: 12px; }
+  .review .card .col-2 div {
+    margin: 5px 0; }
+.review .card:after {
+  content: "";
+  clear: both;
+  display: block; }
+.review .card .review-title {
+  font-style: italic;
+  color: dimgray;
+  font-weight: bold; }
+.review .card .review-body {
+  font-style: italic;
+  font-size: 80%;
+  line-height: 1.3em;
+  overflow: hidden;
+  max-height: 3.75em;
+  position: relative; }
+  .review .card .review-body:before {
+    background: #fff;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    content: "…"; }
+  .review .card .review-body:after {
     content: "";
-    clear: both;
-    display: block; }
-  .review .card .review-title {
-    font-style: italic;
-    color: dimgray;
-    font-weight: bold; }
-  .review .card .review-body {
-    font-style: italic;
-    font-size: 80%;
-    line-height: 1.3em;
-    overflow: hidden;
-    max-height: 3.75em;
-    position: relative; }
-    .review .card .review-body:before {
-      background: #fff;
-      bottom: 0;
-      position: absolute;
-      right: 0;
-      content: "…"; }
-    .review .card .review-body:after {
-      content: "";
-      background: #fff;
-      position: absolute;
-      height: 50px;
-      width: 100%;
-      z-index: 1; }
-  .review .card .link {
-    float: right; }
-  .review .card .img-rating {
-    width: 100px; }
-  .review .card .img-circle {
-    border-radius: 500px; }
+    background: #fff;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    z-index: 1; }
+.review .card .link {
+  float: right; }
+.review .card .img-rating {
+  width: 100px; }
+.review .card .img-circle {
+  border-radius: 500px; }
 
 .nav {
+  padding: 5px 0 0 0;
   text-align: center; }
 
 /*# sourceMappingURL=core.css.map */

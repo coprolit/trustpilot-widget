@@ -110,13 +110,18 @@ function startWidget(data){
 
     showCard(cardsCollection.at(0));
 
-    $('.nav a').click(this.nextCard);
+    $('.nav .next').click(this.nextCard);
+    $('.nav .prev').click(this.prevCard);
     //showCard(cardsCollection.at(count));
     //var timer = setInterval(nextCard, 2000);
 }
 
 function nextCard(){
     count = count < cardsCollection.length-1 ? count + 1 : 0; // increment count
+    showCard(cardsCollection.at(count));
+}
+function prevCard(){
+    count = count === 0 ? cardsCollection.length-1 : count - 1; // increment count
     showCard(cardsCollection.at(count));
 }
 
