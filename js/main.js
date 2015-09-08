@@ -31,10 +31,6 @@ var CardItemView = Backbone.View.extend({
     render: function() {
         this.$el.html(this.template(this.model.attributes));
         return this;
-    },
-
-    events: {
-        //'click .remove': 'onRemove'
     }
 });
 
@@ -95,10 +91,6 @@ var SummeryView = Backbone.View.extend({
 
         el.addClass(that.model.get('cssclass'));
         if(index < that.model.get('average') - 1) that.animateStars(index + 1);
-    },
-
-    events: {
-        //'click .remove': 'onRemove'
     }
 });
 
@@ -136,5 +128,5 @@ function showCard(model){
 }
 
 // Load data and start widget:
-// ...imagine loading json data file from web server - instead, to avoid cross-domain issue we include the data in the header.
+// ...imagine loading json data file from web server here - instead, to avoid cross-domain issue we include the data in the header.
 startWidget(reviewsData);
