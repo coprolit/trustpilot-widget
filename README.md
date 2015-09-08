@@ -1,4 +1,4 @@
-# Trustpilot widget challenge
+# Trustpilot carousel widget
 
 A carousel widget - created for Trustpilot developer challenge.
 
