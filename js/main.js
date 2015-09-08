@@ -21,7 +21,7 @@ var CardItemView = Backbone.View.extend({
 
     initialize: function() {
         //this.listenTo(this.model, 'destroy', this.remove)
-        var profilesrc = this.model.get('firstName') + ( this.model.get('lastName').length ? "-" + this.model.get('lastName') : "" ) + ".png";
+        var profilesrc = this.model.get('firstName').toLowerCase() + ( this.model.get('lastName').length ? "-" + this.model.get('lastName').toLowerCase() : "" ) + ".png";
         this.model.set('profileImg', profilesrc);
 
         var ratingsrc = this.model.get('starRating') + "-" + ( parseInt(this.model.get('starRating')) === 1 ? "star" : "stars" ) + "-260x48.png";
@@ -48,32 +48,32 @@ var SummeryView = Backbone.View.extend({
             return parseInt(previousValue) + parseInt(currentValue);
         });
         var avg = sum / this.collection.length;
-        var color;
+        var cssclass;
 
         switch(avg) {
             case 1:
-                color = "#e22027";
+                cssclass = "star-red";
                 break;
             case 2:
-                color = "#f47324;";
+                cssclass = "star-orange";
                 break;
             case 3:
-                color = "#f8cc18";
+                cssclass = "star-yellow";
                 break;
             case 4:
-                color = "#73b143";
+                cssclass = "star-green";
                 break;
             case 5:
-                color = "#e22027";
+                cssclass = "star-darkgreen";
                 break;
             default:
-                color = "#007f4e";
+                cssclass = "";
         }
 
         this.model.set({
             average: avg,
             base: this.collection.length,
-            color: color
+            cssclass: cssclass
         });
     },
 
@@ -93,7 +93,7 @@ var SummeryView = Backbone.View.extend({
     showStar: function(el, index, that){
         // this function is out of scope when envoked: use passed 'that'.
 
-        el.css("background-color", that.model.get('color'));
+        el.addClass(that.model.get('cssclass'));
         if(index < that.model.get('average') - 1) that.animateStars(index + 1);
     },
 
@@ -104,18 +104,6 @@ var SummeryView = Backbone.View.extend({
 
 var count = 0;
 var cardsCollection;
-
-function loadJSON(url, callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', url, true);
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);
-}
 
 function startWidget(data){
     cardsCollection = new CardCollection(data);
@@ -148,7 +136,5 @@ function showCard(model){
 }
 
 // Load data and start widget:
-loadJSON('reviews.json', function(response) {
-    var jsonData = JSON.parse(response);
-    startWidget(jsonData);
-});
+// ...imagine loading json data file from web server - instead, to avoid cross-domain issue we include the data in the header.
+startWidget(reviewsData);
