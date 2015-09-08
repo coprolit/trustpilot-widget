@@ -2,7 +2,7 @@
 
 A carousel widget - created for Trustpilot developer challenge.
 
-## Objective
+#### Objective
 
 * To develop a widget that can be used to show viewers that a company has a lot of good reviews on Trustpilot.
 * It's up to you how to design your Trustpilot widget.
@@ -11,7 +11,7 @@ A carousel widget - created for Trustpilot developer challenge.
 * All HTML/SCSS/CSS and JS, needs to be custom made... i.e. by you.
 * Use 'Helvetica Neue', Arial, Helvetica, sans-serif; for the font stack.
 
-## Technologies
+#### Technologies
 
 * [SASS](http://sass-lang.com/)
 * [Backbone.js](http://backbonejs.org/)
